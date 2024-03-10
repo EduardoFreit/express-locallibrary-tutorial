@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": ">=18.18.2"
+    "node": ">=18.13.0"
   },
   "scripts": {
     "start": "node ./bin/www",
@@ -14,6 +14,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "express-async-handler": "^1.2.0",
     "express-rate-limit": "^7.2.0",

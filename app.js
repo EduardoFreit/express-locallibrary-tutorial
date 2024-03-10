@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog"); //Import routes for "catalog" area of site
 const compression = require("compression");
 const helmet = require("helmet");
+require('dotenv').config();
 
 var app = express();
 
@@ -74,9 +75,8 @@ app.use("/catalog", catalogRouter); // Add catalog routes to middleware chain.
 
 //Set up mongoose connection
 var mongoose = require("mongoose");
-const dev_db_url = "mongodb+srv://admin:admin@cluster0.gsq1idh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on("error", debug.bind(console, "MongoDB connection error:"));
